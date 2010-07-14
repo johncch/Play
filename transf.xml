@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<presentation>
+  <action>
+    <text type="static" x="282" y="103" fontSize="60">Defiant Deviants</text>
+  </action>
+  <action>
+    <text type="static"/>
+  </action>
+  <action>
+    <text x="388" y="230">Arnold Schoenberg</text>
+  </action>
+  <action>
+    <text x="336" y="312" fontSize="44">Transfigured Night</text>
+  </action>
+  <action>
+    <text x="432" y="459" fontSize="28">Based on a poem by Richard Dehmel</text>
+  </action>
+  <action>
+    <text x="515" y="529" fontSize="24">Translated by Ang Ju Dee</text>
+  </action>
+  <action>
+    <video source="background.mp4"/>
+    <text x="167" y="375">Two people...</text>
+  </action>
+  <action>
+    <text x="173" y="386">Two people walk through the bare, cold, grove;</text>
+  </action>
+  <action>
+    <text x="306" y="394">the moon accompanies them...</text>
+  </action>
+  <action>
+    <text x="449" y="396">... and draws their gaze.</text>
+  </action>
+  <action>
+    <text x="147" y="410">The moon moves along above tall oaks;</text>
+  </action>
+  <action>
+    <text x="108" y="412">no cloud obscures the light of the sky, into which...</text>
+  </action>
+  <action>
+    <text x="540" y="416">the black jagged boughs reach.</text>
+  </action>
+  <action>
+    <text x="342" y="265">A woman's voice speaks...</text>
+  </action>
+  <action>
+    <text x="129" y="380" fontSize="40">I walk in sin...</text>
+  </action>
+  <action>
+    <text x="170" y="398">I am with child...</text>
+  </action>
+  <action>
+    <text x="232" y="391">and not by you..</text>
+  </action>
+  <action>
+    <text x="388" y="386" fontSize="40">I walk in sin...</text>
+  </action>
+  <action>
+    <text x="637" y="394">beside you.</text>
+  </action>
+  <action>
+    <text x="264" y="393">I no longer believed in happiness...</text>
+  </action>
+  <action>
+    <text x="209" y="404">I have committed a great offense against myself.</text>
+  </action>
+  <action>
+    <text x="138" y="393">and yet...</text>
+  </action>
+  <action>
+    <text x="337" y="401">and yet I had a...</text>
+  </action>
+  <action>
+    <text x="242" y="413">... a great yearning for...</text>
+  </action>
+  <action>
+    <text x="398" y="408">... for ... for...</text>
+  </action>
+  <action>
+    <text x="466" y="416">...for a purpose in life...</text>
+  </action>
+  <action>
+    <text x="367" y="416">...and for...</text>
+  </action>
+  <action>
+    <text x="480" y="431">... for a mothers joy.</text>
+  </action>
+  <action>
+    <text x="92" y="194">So I gathered my courage...</text>
+  </action>
+  <action>
+    <text x="202" y="276">... and yielded...</text>
+  </action>
+  <action>
+    <text x="288" y="357">... my shuddering body....</text>
+  </action>
+  <action>
+    <text x="463" y="416">... to the embrace of a stranger.</text>
+  </action>
+  <action>
+    <text x="109" y="371" out="0">And I even thought myself blessed!</text>
+  </action>
+  <action>
+    <text x="281" y="400" fontSize="36">I have sinned...</text>
+  </action>
+  <action>
+    <text x="355" y="422">Now life has taken its revenge:</text>
+  </action>
+  <action>
+    <text x="609" y="426">And I have met...</text>
+  </action>
+  <action>
+    <text x="820" y="440">you...</text>
+  </action>
+  <action>
+    <text x="130" y="398" fontSize="24">oh, you...</text>
+  </action>
+  <action>
+    <text x="272" y="405" fontSize="28">She walks on... stumbling.</text>
+  </action>
+  <action>
+    <text x="376" y="405" fontSize="28">She looks up; the moon keeps pace.</text>
+  </action>
+  <action>
+    <text x="478" y="411">Her dark gaze is drowned in light.</text>
+  </action>
+  <action>
+    <text x="384" y="307">A man's voice speaks...</text>
+  </action>
+  <action>
+    <text x="381" y="358" fontSize="48" anin="1">I forgive you.</text>
+  </action>
+  <action>
+    <text x="187" y="280">See how brightly the universe shines...</text>
+  </action>
+  <action>
+    <text x="179" y="379">Splendour surrounds everything...</text>
+  </action>
+  <action>
+    <text x="165" y="455">Let not the child that you have conceived...</text>
+  </action>
+  <action>
+    <text x="125" y="510">to be a burden on your soul...</text>
+  </action>
+  <action>
+    <text x="141" y="399">There is radience around everything.</text>
+  </action>
+  <action>
+    <text x="291" y="438">We are on a voyage, you and me...</text>
+  </action>
+  <action>
+    <text x="358" y="438">...on a cold sea...</text>
+  </action>
+  <action>
+    <text x="340" y="432">But there is an inner warmth...</text>
+  </action>
+  <action>
+    <text x="272" y="411">from me in you, from you in me.</text>
+  </action>
+  <action>
+    <text x="150" y="430">This warmth will transfigure the stranger's child,</text>
+  </action>
+  <action>
+    <text x="534" y="437">and you will bear it for me,</text>
+  </action>
+  <action>
+    <text x="731" y="439">as if it were mine.</text>
+  </action>
+  <action>
+    <text x="195" y="390">You have brought the radiance into me...</text>
+  </action>
+  <action>
+    <text x="235" y="402">You have brought splendour over me...</text>
+  </action>
+  <action>
+    <text x="564" y="405">you have made a child of me.</text>
+  </action>
+  <action>
+    <text x="114" y="401">Two people walk...</text>
+  </action>
+  <action>
+    <text x="115" y="422">His arm about her...</text>
+  </action>
+  <action>
+    <text x="93" y="402">Their breath kisses in the air.</text>
+  </action>
+  <action>
+    <text x="140" y="412">Two people walk on through...</text>
+  </action>
+  <action>
+    <text x="529" y="414">The high...</text>
+  </action>
+  <action>
+    <text x="701" y="416">Bright...</text>
+  </action>
+  <action>
+    <text x="819" y="393" fontSize="32" duration="8">Night.</text>
+  </action>
+  <action>
+    <video action="fadeout"/>
+  </action>
+</presentation>

@@ -1,0 +1,46 @@
+I. Purpose
+ The main purpose of Play is to display text overlayed on video. This
+ software was written to complement a chamber music event, in which words
+ to the program music were to be flashed onto the screen at certain parts of 
+ the music. In addition, there was to be a video underneath all the words.
+
+ This software is released open source under the MIT license, and I hope it would
+ be useful for anyone who has similar requirements.
+
+II.A Requirements
+ Play requires Adobe AIR 2.0 runtime to install
+
+II.B Build Requirements
+ Play requires Flex 4 SDK and AIR 2 SDK to build. The source shipped with AirEvents
+ taken from http://labs.flexperiments.nl/a-real-native-alert-for-flex-air/ with no
+ license, and requires Greensock tweening platform 11 from http://www.greensock.com
+
+ A sample build file is provided that can be run using Ant. To test in non windows
+ environment, change ADL in build.properties from adl.exe to adl. As a result of Ant
+ and the Flex compiler, Java is required.
+
+III. Support
+ Play is provided as is with no support. However, you may file bug reports or write
+ to johncch@gmail.com
+
+III. MIT License
+
+ Copyright (c) 2010 Chua Chong Han
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.

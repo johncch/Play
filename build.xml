@@ -1,0 +1,86 @@
+<project name="Play" default="package" basedir=".">
+	<description>
+		Play is a flex AIR app for rendering text over video
+	</description>
+	<!--
+		This build file is lifted unabashedly from
+		http://unitedmindset.com/jonbcampos/2010/06/22/building-an-air-application-with-ant/
+	-->
+
+	<!-- IMPORTANT: Path to Flex SDK -->
+	<property file="${basedir}/build.properties" description="Build parameters" />	
+	<taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar"/>
+
+	<target name="init">
+		<tstamp/>
+		<mkdir dir="${BIN.DIR}" />
+		<mkdir dir="${DIST.DIR}" />
+		<available file="${KEYSTORE}" property="CERTIFICATE.FLAG" />
+	</target>
+
+	<target name="compile" depends="init">
+		<mxmlc file="${SRC.DIR}/${SRC.FILE}" output="${BIN.DIR}/${APP.NAME}.swf"
+			configname="air"
+			failonerror="true"
+			static-rsls="true"
+			debug="${DEBUG.FLAG}">
+			<source-path path-element="${SRC.DIR}" />
+			<library-path dir="${LIB.DIR}" includes="*.swc" append="true"/>
+			<external-library-path file="${FLEX_HOME}/frameworks/libs/air/airglobal.swc" append="true"/>
+		</mxmlc>
+	</target>
+
+	<target name="certificate" unless="CERTIFICATE.FLAG">
+		<java jar="${ADT}" fork="true" 
+				failonerror="true">
+			<arg value="-certificate"/>
+			<arg value="-cn"/>
+			<arg value="${CERT.NAME}"/>
+			<arg value="-ou"/>
+			<arg value="${CERT.ORG.UNIT}"/>
+			<arg value="-o"/>
+			<arg value="${CERT.ORG.NAME}"/>
+			<arg value="-c"/>
+			<arg value="${CERT.COUNTRY}"/>
+			<arg value="${CERT.KEY.TYPE}"/>
+			<arg value="${KEYSTORE}"/>
+		<arg value="${CERT.PASSWORD}"/>
+		</java>
+	</target>
+
+	<target name="test" depends="compile">
+		<copy file="${APP.DESCRIPTOR}" toFile="${BIN.DIR}/${APP.DESCRIPTOR}" />
+		<exec executable="${ADL}">
+			<arg value="${BIN.DIR}/${APP.DESCRIPTOR}"/>
+		</exec> 
+	</target>
+
+	<target name="package" depends="compile, certificate"
+        description="Packages the build SWF file from a temp directory.">
+        <java jar="${ADT}" fork="true" 
+            failonerror="true"
+            maxmemory="512m">
+            <arg value="-package"/>
+            <arg value="-storetype"/>
+            <arg value="${STORETYPE}"/>
+            <arg value="-keystore"/>
+            <arg value="${KEYSTORE}"/>
+            <arg value="-storepass"/>
+            <arg value="${CERT.PASSWORD}"/>
+            <arg value="${DIST.DIR}/${APP.NAME}.air"/>
+            <arg value="${APP.DESCRIPTOR}"/>
+            <arg value="-C"/>
+			<arg value="${BIN.DIR}" />
+            <arg value="."/>
+			<arg value="-C" />
+			<arg value="${ASSETS.DIR}" />
+			<arg value="." />
+        </java>
+    </target>
+
+	<target name="clean" description="clean up">
+		<delete dir="${BIN.DIR}" />
+		<delete dir="${DIST.DIR}" />
+	</target>
+
+</project>

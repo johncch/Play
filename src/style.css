@@ -1,0 +1,16 @@
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace mx "library://ns.adobe.com/flex/halo";
+@namespace f "org.fifthrevision.*";
+
+f|Presentation {
+	backgroundColor: 0;
+}
+
+f|PresentationWindow {
+	backgroundColor: 0;
+}
+
+.presentationText {
+	color: white;	
+	fontFamily: Georgia;
+}

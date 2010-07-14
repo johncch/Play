@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Panel xmlns:fx="http://ns.adobe.com/mxml/2009"
+		  xmlns:s="library://ns.adobe.com/flex/spark"
+		  xmlns:mx="library://ns.adobe.com/flex/mx"
+		  title="Control Panel"		  
+		>
+
+		<s:layout>
+			<s:VerticalLayout gap="10" paddingTop="10" paddingBottom="10" paddingLeft="10" paddingRight="10" />
+		</s:layout>
+		
+		<fx:Script>
+			<![CDATA[
+			import flash.events.MouseEvent;
+			import org.fifthrevision.events.EditPanelEvent;
+			
+			private function fireDurationChange():void {			
+				this.dispatchEvent(new EditPanelEvent(EditPanelEvent.DURATION_CHANGE, { duration: this.durSlider.value } ));
+			}
+			
+			private function setAutoDuration(e:MouseEvent):void {
+				if(e.target.selected) {
+					this.dispatchEvent(new EditPanelEvent(EditPanelEvent.DURATION_CHANGE, { duration: -1 } ));
+				} else {
+					this.fireDurationChange();
+				}
+			}
+			
+			public function set duration(i:Number):void {
+				if (i == -1) {
+					durAutoChk.selected = true;
+				} else {
+					durStepper.value = i;
+				}
+			}
+			
+			private function fireInChange():void {				
+				this.dispatchEvent(new EditPanelEvent(EditPanelEvent.IN_CHANGE, { anIn : this.inSlider.value } ));			
+			}
+			
+			private function setDefaultIn(e:MouseEvent):void {
+				if(e.target.selected) {
+					this.dispatchEvent(new EditPanelEvent(EditPanelEvent.IN_CHANGE, { anIn : -1 } ));
+				} else {
+					this.fireInChange();
+				}
+			}
+			
+			public function set anIn(i:Number):void {
+				if (i == -1) {
+					inDefaultChk.selected = true;
+				} else {
+					inStepper.value = i;
+				}
+			}
+			
+			private function fireOutChange():void {
+				this.dispatchEvent(new EditPanelEvent(EditPanelEvent.OUT_CHANGE, { anOut : this.outSlider.value } ));
+			}
+			
+			private function setDefaultOut(e:MouseEvent):void {
+				if (e.target.selected) { 
+					this.dispatchEvent(new EditPanelEvent(EditPanelEvent.OUT_CHANGE, { anOut : -1 } ));
+				} else {
+					this.fireOutChange();
+				}
+			}
+			
+			public function set anOut(i:Number):void {
+				if (i == -1) {
+					outDefaultChk.selected = true;
+				} else {
+					outStepper.value = i;
+				}
+			}
+			
+			]]>
+		</fx:Script>
+		
+		<s:Group>
+			<s:layout>
+				<s:VerticalLayout gap="10"/>
+			</s:layout>
+			
+			<s:Label text="Size" />
+			<s:HGroup gap="10">
+				<s:Button label="+" click="dispatchEvent(new EditPanelEvent(EditPanelEvent.SIZE_PLUS));" />
+				<s:Button label="-" click="dispatchEvent(new EditPanelEvent(EditPanelEvent.SIZE_MINUS));" />
+			</s:HGroup>			
+			
+			<s:Label text="Duration" />
+			<s:HGroup gap="5">
+				<s:HSlider id="durSlider" minimum="0.5" maximum="10" stepSize="0.5" change="fireDurationChange();" enabled="{!durAutoChk.selected}" />
+				<s:NumericStepper id="durStepper" value="@{durSlider.value}" minimum="0.5" maximum="10" stepSize="0.5" change="fireDurationChange();" enabled="{!durAutoChk.selected}"/>
+				<s:CheckBox id="durAutoChk" label="Auto" click="setAutoDuration(event);" />
+			</s:HGroup>
+			
+			<s:Label text="In Time" />
+			<s:HGroup gap="5">
+				<s:HSlider id="inSlider" minimum="0.5" maximum="10" stepSize="0.5" change="fireInChange();" enabled="{!inDefaultChk.selected}" />
+				<s:NumericStepper id="inStepper" value="@{inSlider.value}" minimum="0.5" maximum="10" stepSize="0.5" change="fireInChange();" enabled="{!inDefaultChk.selected}"/>
+				<s:CheckBox id="inDefaultChk" label="Auto" click="setDefaultIn(event);" />
+			</s:HGroup>
+			
+			<s:Label text="Out Time" />
+			<s:HGroup gap="5">
+				<s:HSlider id="outSlider" minimum="0.5" maximum="10" stepSize="0.5" change="fireOutChange();" enabled="{!outDefaultChk.selected}" />
+				<s:NumericStepper id="outStepper" value="@{outSlider.value}" minimum="0.5" maximum="10" stepSize="0.5" change="fireOutChange();" enabled="{!outDefaultChk.selected}"/>
+				<s:CheckBox id="outDefaultChk" label="Auto" click="setDefaultOut(event);" />
+			</s:HGroup>
+		</s:Group>
+		
+		
+</s:Panel>

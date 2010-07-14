@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Window xmlns:fx="http://ns.adobe.com/mxml/2009"
+		  xmlns:s="library://ns.adobe.com/flex/spark"
+		  xmlns:mx="library://ns.adobe.com/flex/mx"
+		  showStatusBar="false"
+		  resizable="false"
+		  maximizable="false"
+		  windowComplete="setup(event);"
+		  closing="closingHandler(event);"
+		>
+	
+	<fx:Script>
+		<![CDATA[
+				
+		import flash.display.Screen;
+		import flash.events.Event;
+		import flash.events.FullScreenEvent;
+		import flash.events.KeyboardEvent;
+		import flash.ui.Keyboard;
+		import flash.ui.Mouse;
+		import mx.core.IVisualElement;
+		import mx.events.AIREvent;
+		import org.fifthrevision.events.InteractionEvent;
+		
+		private var disp:IVisualElement;
+		
+		private function setup(e:AIREvent):void {			
+			this.stage.addEventListener(KeyboardEvent.KEY_DOWN, keyboardEventHandler, false, 0, true);
+			this.stage.addEventListener(KeyboardEvent.KEY_UP, keyboardUpEventHandler, false, 0, true);
+			this.stage.addEventListener(FullScreenEvent.FULL_SCREEN, fullscreenEventHandler, false, 0, true);
+		}
+		
+		private function fullscreenEventHandler(e:FullScreenEvent):void {
+			if (e.fullScreen) {
+				if (this.disp) {
+					this.disp.x = (this.curScreen.bounds.width - this.disp.width) / 2;
+					this.disp.y = (this.curScreen.bounds.height - this.disp.height) / 2;									
+					this.activate();
+				}			
+			} else {
+				if (this.disp) {
+					this.disp.x = 0;
+					this.disp.y = 0;
+					stage.nativeWindow.x = this.oldX;
+					this.activate();
+				}
+			}
+		}
+		
+		private function closingHandler(e:Event):void {
+			e.preventDefault();
+			stage.nativeWindow.visible = false;		
+		}
+		
+		private var keyWasDown:Boolean = false;
+		
+		private function keyboardEventHandler(e:KeyboardEvent):void {
+			if (this.keyWasDown) {
+				return;
+			}
+			
+			if (e.keyCode == Keyboard.LEFT) {
+				dispatchEvent(new InteractionEvent(InteractionEvent.PREV));
+			} else if (e.keyCode == Keyboard.RIGHT) {
+				dispatchEvent(new InteractionEvent(InteractionEvent.NEXT));
+			} else if (e.keyCode == Keyboard.UP) {
+				dispatchEvent(new InteractionEvent(InteractionEvent.CANCEL_AND_PREV));
+			} else if (e.keyCode == Keyboard.DOWN) {
+				dispatchEvent(new InteractionEvent(InteractionEvent.CANCEL_AND_NEXT));
+			}
+			this.keyWasDown = true;
+		}
+		
+		private function keyboardUpEventHandler(e:KeyboardEvent):void {
+			this.keyWasDown = false;
+		}
+		
+		public function addDisplay(disp:IVisualElement):void {
+			this.removeAllElements();
+			this.disp = disp;
+			this.addElement(disp);	
+		}
+		
+		private var curScreen:Screen;
+		private var oldX:int;
+		
+		public function fullscreen(screen:Screen):void {			
+			this.curScreen = screen;
+			this.oldX = stage.nativeWindow.x;
+			stage.nativeWindow.x = screen.bounds.left;
+			stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
+		}
+		
+		]]>
+	</fx:Script>
+	
+</s:Window>
