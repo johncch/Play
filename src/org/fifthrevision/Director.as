@@ -4,14 +4,21 @@ package org.fifthrevision {
 	import flash.display.Stage;
 	import flash.events.Event;
 	import flash.events.KeyboardEvent;
+	import flash.events.TimerEvent;
 	import flash.ui.Keyboard;
+	import flash.utils.Timer;
+	
 	import flashx.textLayout.compose.ITextLineCreator;
+	
 	import mx.collections.ArrayCollection;
 	import mx.collections.XMLListCollection;
 	import mx.events.AIREvent;
+	
 	import nl.flexperiments.display.AirAlert;
+	
 	import org.fifthrevision.events.EditEvent;
 	import org.fifthrevision.events.InteractionEvent;
+	
 	import spark.components.Window;
 	
 	/**
@@ -30,6 +37,7 @@ package org.fifthrevision {
 		public var showable:Boolean = false;
 		public var editable:Boolean = false;
 		public var fullscreenable:Boolean = false;
+		public var fileLoaded:Boolean = false;
 		
 		public var editing:Boolean = false;
 		public var presenting:Boolean = false;
@@ -109,8 +117,8 @@ package org.fifthrevision {
 				return false;
 			}
 			
-			xml.prependChild(<action><marker>Start</marker></action>);
-			xml.appendChild(<action><marker>End</marker></action>);
+			// xml.prependChild(<action><marker>Start</marker></action>);
+			// xml.appendChild(<action><marker>End</marker></action>);
 			var xmllist:XMLList = new XMLList(xml.children());
 			actionsList = new XMLListCollection(xmllist);
 			
@@ -120,10 +128,15 @@ package org.fifthrevision {
 			this.editable = true;
 			this.showable = true;
 			this.fullscreenable = false;
+			this.fileLoaded = true;
 			
 			this.actionsIndex = 0;
 			
 			return true;
+		}
+		
+		public function addEntry(index:int):void {
+			actionsList.addItemAt(<action><text></text></action>, index);
 		}
 		
 		private function interactionHandler(e:InteractionEvent):void {
@@ -152,6 +165,45 @@ package org.fifthrevision {
 			this.editable = false;
 			this.showable = false;
 			this.fullscreenable = true;
+		}
+		
+		public var playing:Boolean = false;
+		
+		public function play():void {
+			this.playing = true;	
+			if(this.actionsList.length < 1) return;
+			this.aIndex = 0;
+			if(!timer){
+				timer = new Timer(100);
+				timer.addEventListener(TimerEvent.TIMER, timerTime);
+			}
+			this.playNext();	
+		}
+		
+		public function stop():void {
+			this.playing = false;
+			if(timer.running) {
+				timer.stop();
+			}
+		}
+		
+		protected var timer:Timer;
+		
+		protected function playNext():void {			
+			var action:XML = this.actionsList.getItemAt(this.aIndex) as XML;
+			this.presentAction(action);
+			timer.stop();
+			if (this.aIndex + 1 < this.actionsList.length) {
+				this.aIndex++;
+				var offset:int = (this.actionsList.getItemAt(this.aIndex) as XML).@time || 500;
+				timer.delay = offset;
+				timer.start();
+			}
+		}
+		
+		protected function timerTime(e:TimerEvent):void {
+			trace("event");
+			playNext();
 		}
 		
 		public var editor:Editor;

@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<presentation>
+  <action>
+    <text x="294" y="298">“Have</text>
+  </action>
+  <action>
+    <text x="387" y="302">you</text>
+  </action>
+  <action>
+    <text x="367" y="323">ever</text>
+  </action>
+  <action>
+    <text x="447" y="338">been</text>
+  </action>
+  <action>
+    <text x="539" y="350">in</text>
+  </action>
+  <action>
+    <text x="589" y="352">love?</text>
+  </action>
+  <action time="5000">
+    <text x="403" y="320" fontSize="48" anin="1.5" duration="2">Horrible</text>
+  </action>
+  <action>
+    <text x="524" y="362" fontSize="40" anin="1" duration="2">isn't</text>
+  </action>
+  <action>
+    <text x="618" y="386" fontSize="44" anin="0.5" duration="1">it?</text>
+  </action>
+  <action time="4000">
+    <text x="280" y="279">It</text>
+  </action>
+  <action>
+    <text x="339" y="289">makes</text>
+  </action>
+  <action>
+    <text x="453" y="289">you</text>
+  </action>
+  <action time="">
+    <text x="557" y="304">so</text>
+  </action>
+  <action time="2500">
+    <text x="665" y="300" duration="3">vulnerable.</text>
+  </action>
+  <action time="5000">
+    <text x="337" y="300">It</text>
+  </action>
+  <action>
+    <text x="378" y="315">opens</text>
+  </action>
+  <action>
+    <text x="488" y="301">your</text>
+  </action>
+  <action>
+    <text x="597" y="307">chest</text>
+  </action>
+  <action>
+    <text x="719" y="309">and</text>
+  </action>
+  <action time="">
+    <text x="347" y="313">it</text>
+  </action>
+  <action>
+    <text x="413" y="312">opens</text>
+  </action>
+  <action>
+    <text x="527" y="313">up</text>
+  </action>
+  <action>
+    <text x="572" y="358">your</text>
+  </action>
+  <action>
+    <text x="693" y="342">heart</text>
+  </action>
+  <action>
+    <text x="229" y="323">and</text>
+  </action>
+  <action>
+    <text x="332" y="330">it</text>
+  </action>
+  <action>
+    <text x="405" y="339">means</text>
+  </action>
+  <action>
+    <text x="564" y="353">that</text>
+  </action>
+  <action>
+    <text x="696" y="312" fontSize="44">someone</text>
+  </action>
+  <action>
+    <text x="211" y="299">can</text>
+  </action>
+  <action>
+    <text x="326" y="319">get</text>
+  </action>
+  <action>
+    <text x="420" y="316">inside</text>
+  </action>
+  <action>
+    <text x="536" y="323">you</text>
+  </action>
+  <action>
+    <text x="227" y="298">and</text>
+  </action>
+  <action time="1500">
+    <text duration="1" x="375" y="323" fontSize="44">mess</text>
+  </action>
+  <action time="1500">
+    <text duration="1" x="500" y="325" fontSize="56">you</text>
+  </action>
+  <action time="1500">
+    <text duration="1" x="615" y="331" fontSize="68">up.</text>
+  </action>
+  <action time="4000">
+    <text x="261" y="357">You</text>
+  </action>
+  <action>
+    <text x="372" y="354" fontSize="40">build</text>
+  </action>
+  <action>
+    <text x="363" y="382">up</text>
+  </action>
+  <action>
+    <text x="457" y="420">all</text>
+  </action>
+  <action>
+    <text x="539" y="446">these</text>
+  </action>
+  <action>
+    <text x="660" y="429">defenses,</text>
+  </action>
+  <action time="1500">
+    <text x="315" y="299">you</text>
+  </action>
+  <action>
+    <text x="391" y="338">build</text>
+  </action>
+  <action>
+    <text x="494" y="338">up</text>
+  </action>
+  <action>
+    <text x="342" y="377">a</text>
+  </action>
+  <action>
+    <text x="402" y="398">whole</text>
+  </action>
+  <action>
+    <text x="508" y="432">suit</text>
+  </action>
+  <action>
+    <text x="512" y="496">of</text>
+  </action>
+  <action>
+    <text x="595" y="476">armor,</text>
+  </action>
+  <action time="2000">
+    <text x="296" y="258">so</text>
+  </action>
+  <action>
+    <text x="402" y="267">that</text>
+  </action>
+  <action>
+    <text x="543" y="286" fontSize="52">nothing</text>
+  </action>
+  <action>
+    <text x="321" y="322">can</text>
+  </action>
+  <action>
+    <text x="444" y="311" fontSize="44">hurt</text>
+  </action>
+  <action>
+    <text x="602" y="313">you,</text>
+  </action>
+  <action time="2000">
+    <text x="333" y="333" duration="1">then</text>
+  </action>
+  <action time="200">
+    <text x="348" y="428" fontSize="52" duration="2">one</text>
+  </action>
+  <action>
+    <text x="492" y="418" fontSize="60" duration="1">stupid</text>
+  </action>
+  <action>
+    <text x="679" y="438" fontSize="40" duration="1">person,</text>
+  </action>
+  <action time="3000">
+    <text x="357" y="245">no</text>
+  </action>
+  <action>
+    <text x="419" y="286">different</text>
+  </action>
+  <action>
+    <text x="307" y="303">from</text>
+  </action>
+  <action>
+    <text x="368" y="311">any</text>
+  </action>
+  <action>
+    <text x="474" y="333">other</text>
+  </action>
+  <action>
+    <text x="412" y="422" fontSize="40">stupid</text>
+  </action>
+  <action>
+    <text x="563" y="412" fontSize="40">person,</text>
+  </action>
+  <action time="1500">
+    <text x="259" y="222">wanders</text>
+  </action>
+  <action>
+    <text x="362" y="210">into</text>
+  </action>
+  <action>
+    <text x="390" y="273">your</text>
+  </action>
+  <action>
+    <text x="481" y="359" fontSize="40" duration="1">stupid</text>
+  </action>
+  <action>
+    <text x="653" y="353" fontSize="40" duration="1">life...</text>
+  </action>
+  <action time="3000">
+    <text x="219" y="377">You</text>
+  </action>
+  <action>
+    <text x="324" y="359">give</text>
+  </action>
+  <action>
+    <text x="425" y="357">them</text>
+  </action>
+  <action>
+    <text x="535" y="360">a</text>
+  </action>
+  <action>
+    <text x="621" y="348">piece</text>
+  </action>
+  <action>
+    <text x="743" y="349">of</text>
+  </action>
+  <action>
+    <text x="840" y="329">you.</text>
+  </action>
+  <action time="3000">
+    <text x="235" y="371">They</text>
+  </action>
+  <action>
+    <text x="313" y="350">didn't</text>
+  </action>
+  <action>
+    <text x="451" y="361">ask</text>
+  </action>
+  <action>
+    <text x="568" y="376">for</text>
+  </action>
+  <action>
+    <text x="656" y="374">it.</text>
+  </action>
+  <action time="3000">
+    <text x="306" y="237">They</text>
+  </action>
+  <action>
+    <text x="398" y="257">did</text>
+  </action>
+  <action>
+    <text x="355" y="311">something</text>
+  </action>
+  <action>
+    <text x="427" y="402" fontSize="48">dumb</text>
+  </action>
+  <action>
+    <text x="535" y="457">one</text>
+  </action>
+  <action>
+    <text x="623" y="447">day,</text>
+  </action>
+  <action time="2000">
+    <text x="374" y="234" fontSize="52">like</text>
+  </action>
+  <action>
+    <text x="455" y="283" fontSize="72">kiss</text>
+  </action>
+  <action>
+    <text x="453" y="351" fontSize="44">you</text>
+  </action>
+  <action time="1500">
+    <text x="347" y="239">or</text>
+  </action>
+  <action>
+    <text x="422" y="297" fontSize="56">smile</text>
+  </action>
+  <action>
+    <text x="426" y="372" fontSize="40">at</text>
+  </action>
+  <action>
+    <text x="497" y="424" fontSize="40">you,</text>
+  </action>
+  <action time="1500">
+    <text x="237" y="225">and</text>
+  </action>
+  <action>
+    <text x="324" y="237">then</text>
+  </action>
+  <action>
+    <text x="428" y="272">your</text>
+  </action>
+  <action>
+    <text x="527" y="277">life</text>
+  </action>
+  <action>
+    <text x="388" y="375" fontSize="40">isn't</text>
+  </action>
+  <action>
+    <text x="468" y="373" fontSize="44">your</text>
+  </action>
+  <action>
+    <text x="594" y="369" fontSize="36">own</text>
+  </action>
+  <action>
+    <text x="757" y="380" fontSize="40">anymore.</text>
+  </action>
+  <action time="5000">
+    <text x="182" y="345" fontSize="52" duration="1">Love</text>
+  </action>
+  <action>
+    <text x="343" y="344" fontSize="52" duration="1">takes</text>
+  </action>
+  <action>
+    <text x="490" y="341" fontSize="52">hostages.</text>
+  </action>
+  <action time="5000">
+    <text x="363" y="270">It</text>
+  </action>
+  <action>
+    <text x="432" y="298">gets</text>
+  </action>
+  <action>
+    <text x="398" y="330">inside</text>
+  </action>
+  <action>
+    <text x="431" y="377">you.</text>
+  </action>
+  <action>
+    <text x="429" y="300">It</text>
+  </action>
+  <action>
+    <text x="497" y="322" fontSize="44">eats</text>
+  </action>
+  <action>
+    <text x="427" y="357">you</text>
+  </action>
+  <action>
+    <text x="448" y="413">out</text>
+  </action>
+  <action>
+    <text x="296" y="291">and</text>
+  </action>
+  <action>
+    <text x="414" y="298">leaves</text>
+  </action>
+  <action>
+    <text x="520" y="355">you</text>
+  </action>
+  <action>
+    <text x="558" y="399" fontSize="60">crying</text>
+  </action>
+  <action>
+    <text x="599" y="518">in</text>
+  </action>
+  <action>
+    <text x="694" y="591">the</text>
+  </action>
+  <action>
+    <text x="647" y="681">darkness,</text>
+  </action>
+  <action time="5000">
+    <text x="383" y="265">so</text>
+  </action>
+  <action>
+    <text x="411" y="269">simple</text>
+  </action>
+  <action>
+    <text x="609" y="312">a</text>
+  </action>
+  <action>
+    <text x="632" y="320">phrase</text>
+  </action>
+  <action>
+    <text x="395" y="386">like</text>
+  </action>
+  <action>
+    <text x="195" y="233" fontSize="40" duration="1">'maybe</text>
+  </action>
+  <action time="1000">
+    <text x="425" y="329" fontSize="40" duration="1">we</text>
+  </action>
+  <action time="1000">
+    <text x="542" y="393" fontSize="40" duration="1">should</text>
+  </action>
+  <action time="1000">
+    <text x="383" y="443" fontSize="40" duration="1">be</text>
+  </action>
+  <action time="1000">
+    <text x="555" y="495" fontSize="44" duration="1">just</text>
+  </action>
+  <action time="1000">
+    <text x="431" y="571" fontSize="40" duration="1">friends'</text>
+  </action>
+  <action time="2000">
+    <text x="282" y="209">turns</text>
+  </action>
+  <action>
+    <text x="398" y="232" fontSize="40">into</text>
+  </action>
+  <action>
+    <text x="490" y="241">a</text>
+  </action>
+  <action>
+    <text x="472" y="357">glass</text>
+  </action>
+  <action>
+    <text x="617" y="355">splinter</text>
+  </action>
+  <action>
+    <text x="226" y="444">working</text>
+  </action>
+  <action>
+    <text x="393" y="447">its</text>
+  </action>
+  <action>
+    <text x="449" y="427">way</text>
+  </action>
+  <action>
+    <text x="562" y="426">into</text>
+  </action>
+  <action>
+    <text x="686" y="409">your</text>
+  </action>
+  <action>
+    <text fontSize="40" x="786" y="413">heart.</text>
+  </action>
+  <action time="4000">
+    <text x="312" y="349" fontSize="24" duration="2">It</text>
+  </action>
+  <action>
+    <text x="352" y="354" duration="2" fontSize="24">hurts.</text>
+  </action>
+  <action time="3000">
+    <text x="291" y="204">Not</text>
+  </action>
+  <action>
+    <text x="338" y="234">just</text>
+  </action>
+  <action>
+    <text x="334" y="345">in</text>
+  </action>
+  <action>
+    <text x="405" y="352">the</text>
+  </action>
+  <action>
+    <text x="323" y="422">imagination.</text>
+  </action>
+  <action time="3000">
+    <text x="301" y="270">Not</text>
+  </action>
+  <action>
+    <text x="332" y="313">just</text>
+  </action>
+  <action>
+    <text x="305" y="361">in</text>
+  </action>
+  <action>
+    <text x="339" y="417">the</text>
+  </action>
+  <action>
+    <text x="351" y="463">mind.</text>
+  </action>
+  <action time="3000">
+    <text x="291" y="237">It's</text>
+  </action>
+  <action>
+    <text x="361" y="273">a</text>
+  </action>
+  <action>
+    <text x="452" y="323">soul-hurt,</text>
+  </action>
+  <action time="3000">
+    <text x="345" y="302">a</text>
+  </action>
+  <action>
+    <text x="434" y="364">real</text>
+  </action>
+  <action>
+    <text x="398" y="434">gets-inside-you-and-rips-you-apart</text>
+  </action>
+  <action time="200">
+    <text x="606" y="496" fontSize="48">pain.</text>
+  </action>
+  <action time="5000">
+    <text x="362" y="429" fontSize="76" duration="2">I</text>
+  </action>
+  <action>
+    <text x="457" y="440" fontSize="64" duration="1">hate</text>
+  </action>
+  <action>
+    <text x="613" y="445" fontSize="60" duration="1">love.”</text>
+  </action>
+</presentation>

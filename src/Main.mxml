@@ -6,11 +6,22 @@
 					   creationComplete="init();"
 					   showStatusBar="false"
 					   close="shutdown();"
-					   invoke="onInvoke(event);"
-					   >
+					   invoke="onInvoke(event);">
 	
 	<fx:Declarations>
-		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		<fx:XML format="e4x" id="menuXML">
+			<root>
+				<menuitem label="Play">
+					<menuitem label="About Play" />
+				</menuitem>
+				<menuitem label="File">
+					<menuitem label="New" value="new" />
+					<menuitem label="Load.." value="load" />
+					<menuitem label="Save" value="save" />
+					<menuitem label="Exit" value="exit" />
+				</menuitem>
+			</root>
+		</fx:XML>
 	</fx:Declarations>
 	
 	<s:layout>
@@ -22,8 +33,11 @@
 	<fx:Script>
 		<![CDATA[
 		import adobe.utils.ProductManager;
+		
 		import com.greensock.plugins.BlurFilterPlugin;
 		import com.greensock.plugins.GlowFilterPlugin;
+		import com.greensock.plugins.TweenPlugin;
+		
 		import flash.desktop.NativeApplication;
 		import flash.display.NativeWindow;
 		import flash.display.Screen;
@@ -34,13 +48,16 @@
 		import flash.filesystem.File;
 		import flash.filesystem.FileMode;
 		import flash.filesystem.FileStream;
+		
 		import mx.collections.ArrayCollection;
+		import mx.events.FlexNativeMenuEvent;
 		import mx.events.ItemClickEvent;
 		import mx.events.MenuEvent;
+		
 		import nl.flexperiments.display.AirAlert;
+		
 		import org.fifthrevision.Director;
 		import org.fifthrevision.Presentation;
-		import com.greensock.plugins.TweenPlugin;
 		
 		[Bindable] private var director:Director = new Director();
 		[Bindable] private var screensData:ArrayCollection = new ArrayCollection();
@@ -70,7 +87,7 @@
 		private var file:File;
 		private var dir:String;
 		
-		private function browse(e:MenuEvent):void {
+		private function browse(e:FlexNativeMenuEvent):void {
 			if (e.item.@value == "load") {
 				file = new File();
 				file.addEventListener(Event.SELECT, readXMLFile);
@@ -98,11 +115,11 @@
 				AirAlert.show("There is no file to write to");
 				return;
 			}
-				
+			
 			var outputString:String = '<?xml version="1.0" encoding="utf-8" ?>\n';
 			var xmllist:XMLList = director.actionsList.source;
 			var presentation:XML = <presentation />;			
-			for (var i:int = 1, il:int = xmllist.length(); i < il - 1; i++) {
+			for (var i:int = 0, il:int = xmllist.length(); i < il; i++) {
 				presentation.appendChild(xmllist[i]);				
 			}
 			outputString += presentation.toXMLString();			
@@ -124,36 +141,62 @@
 				NativeWindow(NativeApplication.nativeApplication.openedWindows[i]).close();
 			}
 		}
+			
+		private function playClicked(e:Event):void {
+			if(director.playing){
+				playBtn.label = "Play";
+				director.stop();
+			} else {
+				playBtn.label = "Stop";
+				director.play();
+			}
+		}
 		
 		]]>
 	</fx:Script>
-	
-	<mx:MenuBar labelField="@label" itemClick="browse(event)" width="100%">
-			<fx:XMLList>
-				<menuitem label="File">
-					<menuitem label="Load.." value="load" />
-					<menuitem label="Save" value="save" />
-					<menuitem label="Exit" value="exit" />
-				</menuitem>
-			</fx:XMLList>
-	</mx:MenuBar>
+
+	<s:menu>
+		<mx:FlexNativeMenu itemClick="browse(event)" dataProvider="{menuXML}" labelField="@label" showRoot="false" />
+	</s:menu>
 		
+	<!-- <s:Panel title="Movie Properties" width="100%" height="50" dropShadowVisible="false">
+		<s:layout>
+			<s:VerticalLayout gap="10" paddingBottom="10" paddingLeft="10" paddingRight="10" paddingTop="10"/>
+		</s:layout>
+		
+		<s:HGroup width="100%">
+			<s:Label text="Name" />
+			<s:TextInput width="100%" />
+		</s:HGroup>
+		<s:HGroup>
+			<s:Label text="Width" />
+			<s:TextInput />
+			<s:Label text="Height" />
+			<s:TextInput />
+		</s:HGroup>
+	</s:Panel> -->
+	
 	<s:Group width="100%" height="100%">
 		<s:layout>
 			<s:HorizontalLayout paddingTop="5" paddingBottom="5" paddingLeft="5" paddingRight="5" />
 		</s:layout>
 		
-		<s:List id="actionsList" width="80%" height="100%" 
+		<!-- <s:List id="actionsList" width="80%" height="100%" 
 			dataProvider="{director.actionsList}" selectedIndex="@{director.actionsIndex}"
 			labelFunction="{director.labelFunction}"
-		/>
+		/>-->
+		
+		<mx:DataGrid id="actionsList" width="80%" height="100%"
+				 dataProvider="{director.actionsList}" selectedIndex="@{director.actionsIndex}" 
+				 sortableColumns="false" editable="true" enabled="{director.fileLoaded}">
+			<mx:columns>
+				<mx:DataGridColumn dataField="text" headerText="Text" width="0.7"/>
+				<mx:DataGridColumn dataField="@time" headerText="Time" width="0.3"/>
+			</mx:columns>
+		</mx:DataGrid>
 		
 		<s:Group width="20%">
-			<s:layout>
-				<s:VerticalLayout />
-			</s:layout>
-			<s:Button width="100%" label="Next" click="director.next();" enabled="{director.editing || director.presenting}" />
-			<s:Button width="100%" label="Previous" click="director.previous();" enabled="{director.editing || director.presenting}"/>
+			<s:Button label="Add" click="{director.addEntry(actionsList.selectedIndex + 1)}" enabled="{director.fileLoaded}"/>
 		</s:Group>
 	</s:Group>
 	
@@ -165,6 +208,7 @@
 		<s:Button id="editorBtn" label="Edit" click="director.edit();" enabled="{director.editable}" />
 		<s:ComboBox id="screenCombo" dataProvider="{screensData}"/>
 		<s:Button id="showBtn" label="Show" click="director.show();" enabled="{director.showable}" />
+		<s:Button id="playBtn" label="Play" click="playClicked(event)" enabled="{!director.showable}" />				  
 		<s:Button id="fsBtn" label="Fullscreen" click="fullscreen();" enabled="{director.fullscreenable}" />
 	</s:Group>
 	
